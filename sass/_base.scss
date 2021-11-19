@@ -1,0 +1,55 @@
+// COLOR VARIABLES
+$color-primary: #fed801;
+
+$color-white: #fff;
+$color-black: #000;
+
+$color-grey-light: #d2d2d2;
+$color-grey-dark: #7a7a7a;
+
+$color-background: #f6f7fb;
+
+// FONT VARIABLES
+$font-en: "Roboto", sans-serif;
+$font-ch: "Noto Sans TC", sans-serif;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; // 10px/16px = 62.5% -> 1rem = 10px
+}
+
+body {
+  color: $color-grey-dark;
+  background-color: $color-primary;
+}
+
+.container {
+  display: grid;
+  /*grid-template-rows: min-content 85vh min-content repeat(2, min-content) min-content;*/
+  grid-template-rows: min-content 75vh min-content;
+
+  grid-template-columns:
+    [full-start] minmax(6rem, 1fr)
+    repeat(5, [col-start] minmax(21rem, 1fr) [col-end])
+    minmax(6rem, 1fr)
+    [full-end];
+}
+
+.init-page {
+  grid-column: full-start/full-end;
+  display: grid;
+  grid-template-rows: min-content repeat(2, min-content);
+  grid-template-columns:
+    [full-start] minmax(6rem, 1fr)
+    repeat(5, [col-start] minmax(21rem, 1fr) [col-end])
+    minmax(6rem, 1fr)
+    [full-end];
+}

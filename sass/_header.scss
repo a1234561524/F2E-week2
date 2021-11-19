@@ -1,0 +1,41 @@
+.header {
+  display: flex;
+  height: 12vh;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.switch {
+  display: flex;
+  background-color: $color-white;
+  border-radius: 50px;
+  .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 138px;
+    height: 42px;
+    border-radius: 50px;
+    cursor: pointer;
+    gap: 1rem;
+    border: none;
+  }
+
+  .btn-on {
+    background-color: $color-black;
+    color: $color-primary;
+    z-index: 2;
+  }
+  .btn-off {
+    background-color: $color-white;
+    z-index: 1;
+  }
+
+  .rent-text,
+  .return-text {
+    text-align: justify;
+  }
+}
+.img-show {
+  cursor: pointer;
+}

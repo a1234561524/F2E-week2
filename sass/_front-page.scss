@@ -1,0 +1,43 @@
+.search-contain {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+
+  &-1 {
+    width: 119px;
+    height: 75px;
+  }
+
+  &-2 {
+    width: 245px;
+    height: 47px;
+  }
+
+  &__text {
+    letter-spacing: 0.92em;
+  }
+}
+
+.nav-box {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+
+  &__btn {
+    width: 24.4rem;
+    height: 4.8rem;
+    border-radius: 1rem;
+    background-color: $color-primary;
+  }
+}
+.footer {
+  text-align: right;
+  margin: 2rem 4rem;
+}

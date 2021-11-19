@@ -1,0 +1,101 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; }
+
+body {
+  color: #7a7a7a;
+  background-color: #fed801; }
+
+.container {
+  display: grid;
+  /*grid-template-rows: min-content 85vh min-content repeat(2, min-content) min-content;*/
+  grid-template-rows: min-content 75vh min-content;
+  grid-template-columns: [full-start] minmax(6rem, 1fr) repeat(5, [col-start] minmax(21rem, 1fr) [col-end]) minmax(6rem, 1fr) [full-end]; }
+
+.init-page {
+  grid-column: full-start/full-end;
+  display: grid;
+  grid-template-rows: min-content repeat(2, min-content);
+  grid-template-columns: [full-start] minmax(6rem, 1fr) repeat(5, [col-start] minmax(21rem, 1fr) [col-end]) minmax(6rem, 1fr) [full-end]; }
+
+.h1-meun {
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight: normal;
+  font-size: 1.7rem;
+  line-height: 2.5rem; }
+
+.h2-TC {
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight: normal;
+  font-size: 1.6rem;
+  line-height: 2.4rem; }
+
+.h3-EN {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-size: 1.5rem;
+  line-height: 1.8rem; }
+
+.h4-TC {
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight: normal;
+  font-size: 1.4rem;
+  line-height: 2.1rem; }
+
+.h5-TC {
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight: normal;
+  font-size: 1.3rem;
+  line-height: 1.9rem; }
+
+.h5-EN {
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+  font-size: 1.3rem;
+  line-height: 1.5rem; }
+
+.copyright {
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+  font-size: 1.2rem;
+  line-height: 1.4rem; }
+
+.search-contain {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center; }
+
+.logo {
+  display: flex;
+  flex-direction: column; }
+  .logo-1 {
+    width: 119px;
+    height: 75px; }
+  .logo-2 {
+    width: 245px;
+    height: 47px; }
+  .logo__text {
+    letter-spacing: 0.92em; }
+
+.nav-box {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem; }
+  .nav-box__btn {
+    width: 24.4rem;
+    height: 4.8rem;
+    border-radius: 1rem;
+    background-color: #fed801; }
+
+.footer {
+  text-align: right;
+  margin: 2rem 4rem; }

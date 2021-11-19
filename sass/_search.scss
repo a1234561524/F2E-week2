@@ -1,0 +1,42 @@
+.search {
+  position: absolute;
+  z-index: 999;
+  left: 50%;
+  top: 20%;
+  transform: translateX(-40%);
+
+  &__text {
+    width: 33.3vw;
+    height: 5.6rem;
+    border-radius: 1rem;
+  }
+
+  &__btn {
+    width: 5.6rem;
+    height: 5.6rem;
+    background-color: $color-black;
+    border-radius: 1rem;
+  }
+}
+.leaflet-popup-content-wrapper {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  position: relative;
+}
+
+.leaflet-popup-tip {
+  display: none;
+}
+
+.number {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+}
+.numberColor {
+  color: $color-primary;
+}

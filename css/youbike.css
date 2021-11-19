@@ -1,0 +1,144 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; }
+
+body {
+  color: #7a7a7a;
+  background-color: #fed801; }
+
+.container {
+  display: grid;
+  /*grid-template-rows: min-content 85vh min-content repeat(2, min-content) min-content;*/
+  grid-template-rows: min-content 75vh min-content;
+  grid-template-columns: [full-start] minmax(6rem, 1fr) repeat(5, [col-start] minmax(21rem, 1fr) [col-end]) minmax(6rem, 1fr) [full-end]; }
+
+.init-page {
+  grid-column: full-start/full-end;
+  display: grid;
+  grid-template-rows: min-content repeat(2, min-content);
+  grid-template-columns: [full-start] minmax(6rem, 1fr) repeat(5, [col-start] minmax(21rem, 1fr) [col-end]) minmax(6rem, 1fr) [full-end]; }
+
+.h1-meun {
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight: normal;
+  font-size: 1.7rem;
+  line-height: 2.5rem; }
+
+.h2-TC {
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight: normal;
+  font-size: 1.6rem;
+  line-height: 2.4rem; }
+
+.h3-EN {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-size: 1.5rem;
+  line-height: 1.8rem; }
+
+.h4-TC {
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight: normal;
+  font-size: 1.4rem;
+  line-height: 2.1rem; }
+
+.h5-TC {
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight: normal;
+  font-size: 1.3rem;
+  line-height: 1.9rem; }
+
+.h5-EN {
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+  font-size: 1.3rem;
+  line-height: 1.5rem; }
+
+.copyright {
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+  font-size: 1.2rem;
+  line-height: 1.4rem; }
+
+.header {
+  display: flex;
+  height: 12vh;
+  justify-content: space-around;
+  align-items: center; }
+
+.switch {
+  display: flex;
+  background-color: #fff;
+  border-radius: 50px; }
+  .switch .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 138px;
+    height: 42px;
+    border-radius: 50px;
+    cursor: pointer;
+    gap: 1rem;
+    border: none; }
+  .switch .btn-on {
+    background-color: #000;
+    color: #fed801;
+    z-index: 2; }
+  .switch .btn-off {
+    background-color: #fff;
+    z-index: 1; }
+  .switch .rent-text,
+  .switch .return-text {
+    text-align: justify; }
+
+.img-show {
+  cursor: pointer; }
+
+#mapid {
+  height: 88vh;
+  background-color: #f6f7fb; }
+
+.leaflet-control-zoom {
+  opacity: 0; }
+
+.search {
+  position: absolute;
+  z-index: 999;
+  left: 50%;
+  top: 20%;
+  transform: translateX(-40%); }
+  .search__text {
+    width: 33.3vw;
+    height: 5.6rem;
+    border-radius: 1rem; }
+  .search__btn {
+    width: 5.6rem;
+    height: 5.6rem;
+    background-color: #000;
+    border-radius: 1rem; }
+
+.leaflet-popup-content-wrapper {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  position: relative; }
+
+.leaflet-popup-tip {
+  display: none; }
+
+.number {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+
+.numberColor {
+  color: #fed801; }
