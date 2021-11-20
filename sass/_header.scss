@@ -1,8 +1,10 @@
 .header {
   display: flex;
   height: 12vh;
-  justify-content: space-around;
+  padding: 0 7vw;
+  justify-content: space-between;
   align-items: center;
+  background-color: $color-primary;
 }
 
 .switch {

@@ -1,9 +1,10 @@
 .search-contain {
-  height: 90vh;
+  height: 93vh;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  background-color: $color-primary;
 }
 
 .logo {
@@ -35,9 +36,42 @@
     height: 4.8rem;
     border-radius: 1rem;
     background-color: $color-primary;
+    border: $color-black solid 0.1rem;
+    &:link,
+    &:visited {
+      transform: translateY(0);
+      transition: all 0.2s;
+    }
+
+    &:hover,
+    &:active {
+      color: $color-primary;
+      background-color: $color-black;
+      transform: translateY(-3px);
+    }
+  }
+
+  &__item {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+
+    &:link,
+    &:visited {
+      color: $color-black;
+      text-decoration: none;
+    }
+
+    &:hover,
+    &:active {
+      color: $color-primary;
+    }
   }
 }
 .footer {
   text-align: right;
-  margin: 2rem 4rem;
+  padding: 2rem 4rem;
+  background-color: $color-primary;
 }

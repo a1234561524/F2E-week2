@@ -1,9 +1,10 @@
 .header {
   display: flex;
   height: 12vh;
-  align-items: center;
-  margin: 0 7vw;
+  padding: 0 7vw;
   justify-content: space-between;
+  align-items: center;
+  background-color: $color-primary;
 }
 
 .select {
@@ -14,5 +15,13 @@
     padding-left: 1.6rem;
     background-color: $color-black;
     color: $color-white;
+  }
+
+  &__return {
+    width: 14.3rem;
+    height: 3.1rem;
+    border-radius: 3.1rem;
+    background-color: $color-white;
+    color: $color-black;
   }
 }

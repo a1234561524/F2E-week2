@@ -27,29 +27,5 @@ html {
 }
 
 body {
-  color: $color-grey-dark;
-  background-color: $color-primary;
-}
-
-.container {
-  display: grid;
-  /*grid-template-rows: min-content 85vh min-content repeat(2, min-content) min-content;*/
-  grid-template-rows: min-content 75vh min-content;
-
-  grid-template-columns:
-    [full-start] minmax(6rem, 1fr)
-    repeat(5, [col-start] minmax(21rem, 1fr) [col-end])
-    minmax(6rem, 1fr)
-    [full-end];
-}
-
-.init-page {
-  grid-column: full-start/full-end;
-  display: grid;
-  grid-template-rows: min-content repeat(2, min-content);
-  grid-template-columns:
-    [full-start] minmax(6rem, 1fr)
-    repeat(5, [col-start] minmax(21rem, 1fr) [col-end])
-    minmax(6rem, 1fr)
-    [full-end];
+  background-color: $color-background;
 }

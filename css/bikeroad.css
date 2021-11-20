@@ -10,69 +10,64 @@ html {
   font-size: 62.5%; }
 
 body {
-  color: #7a7a7a;
-  background-color: #fed801; }
-
-.container {
-  display: grid;
-  /*grid-template-rows: min-content 85vh min-content repeat(2, min-content) min-content;*/
-  grid-template-rows: min-content 75vh min-content;
-  grid-template-columns: [full-start] minmax(6rem, 1fr) repeat(5, [col-start] minmax(21rem, 1fr) [col-end]) minmax(6rem, 1fr) [full-end]; }
-
-.init-page {
-  grid-column: full-start/full-end;
-  display: grid;
-  grid-template-rows: min-content repeat(2, min-content);
-  grid-template-columns: [full-start] minmax(6rem, 1fr) repeat(5, [col-start] minmax(21rem, 1fr) [col-end]) minmax(6rem, 1fr) [full-end]; }
+  background-color: #f6f7fb; }
 
 .h1-meun {
   font-family: "Noto Sans TC", sans-serif;
   font-weight: normal;
   font-size: 1.7rem;
-  line-height: 2.5rem; }
+  line-height: 2.5rem;
+  margin-bottom: 0; }
 
 .h2-TC {
   font-family: "Noto Sans TC", sans-serif;
   font-weight: normal;
   font-size: 1.6rem;
-  line-height: 2.4rem; }
+  line-height: 2.4rem;
+  margin-bottom: 0; }
 
 .h3-EN {
   font-family: "Roboto", sans-serif;
   font-weight: 900;
   font-size: 1.5rem;
-  line-height: 1.8rem; }
+  line-height: 1.8rem;
+  margin-bottom: 0; }
 
 .h4-TC {
   font-family: "Noto Sans TC", sans-serif;
   font-weight: normal;
   font-size: 1.4rem;
-  line-height: 2.1rem; }
+  line-height: 2.1rem;
+  margin-bottom: 0; }
 
 .h5-TC {
   font-family: "Noto Sans TC", sans-serif;
   font-weight: normal;
   font-size: 1.3rem;
-  line-height: 1.9rem; }
+  line-height: 1.9rem;
+  margin-bottom: 0; }
 
 .h5-EN {
   font-family: "Roboto", sans-serif;
   font-weight: normal;
   font-size: 1.3rem;
-  line-height: 1.5rem; }
+  line-height: 1.5rem;
+  margin-bottom: 0; }
 
 .copyright {
   font-family: "Roboto", sans-serif;
   font-weight: normal;
   font-size: 1.2rem;
-  line-height: 1.4rem; }
+  line-height: 1.4rem;
+  margin-bottom: 0; }
 
 .header {
   display: flex;
   height: 12vh;
+  padding: 0 7vw;
+  justify-content: space-between;
   align-items: center;
-  margin: 0 7vw;
-  justify-content: space-between; }
+  background-color: #fed801; }
 
 .select__city {
   width: 14.3rem;
@@ -82,9 +77,67 @@ body {
   background-color: #000;
   color: #fff; }
 
+.select__return {
+  width: 14.3rem;
+  height: 3.1rem;
+  border-radius: 3.1rem;
+  background-color: #fff;
+  color: #000; }
+
 #mapid {
   height: 88vh;
   background-color: #f6f7fb; }
 
 .leaflet-control-zoom {
   opacity: 0; }
+
+.leaflet-popup-content-wrapper {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  position: relative; }
+
+.leaflet-popup-tip {
+  display: none; }
+
+.bikeroadsearch {
+  height: 88vh;
+  display: grid;
+  grid-template-columns: minmax(6rem, 1fr) 1fr minmax(6rem, 1fr); }
+
+.searchresult {
+  grid-column: 2 / 3;
+  display: grid;
+  grid-auto-rows: 7.9rem;
+  grid-template-columns: repeat(3, [col-start] minmax(36.2rem, 1fr) [col-end]);
+  gap: 0.8rem;
+  margin-top: 4.2rem;
+  align-items: center; }
+
+.result {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 2.4rem 2.4rem;
+  row-gap: 0.7rem;
+  column-gap: 7.2rem;
+  background-color: #fff;
+  align-items: center;
+  border-radius: 1rem;
+  padding: 1.2rem;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1); }
+  .result:hover {
+    background-color: #fed801;
+    cursor: pointer; }
+  .result__title {
+    grid-column: 1/-1; }
+  .result__location {
+    display: flex;
+    align-items: center; }
+
+.point {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: #fed801;
+  transform: translate(-50%, -50%); }

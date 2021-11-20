@@ -10,69 +10,64 @@ html {
   font-size: 62.5%; }
 
 body {
-  color: #7a7a7a;
-  background-color: #fed801; }
-
-.container {
-  display: grid;
-  /*grid-template-rows: min-content 85vh min-content repeat(2, min-content) min-content;*/
-  grid-template-rows: min-content 75vh min-content;
-  grid-template-columns: [full-start] minmax(6rem, 1fr) repeat(5, [col-start] minmax(21rem, 1fr) [col-end]) minmax(6rem, 1fr) [full-end]; }
-
-.init-page {
-  grid-column: full-start/full-end;
-  display: grid;
-  grid-template-rows: min-content repeat(2, min-content);
-  grid-template-columns: [full-start] minmax(6rem, 1fr) repeat(5, [col-start] minmax(21rem, 1fr) [col-end]) minmax(6rem, 1fr) [full-end]; }
+  background-color: #f6f7fb; }
 
 .h1-meun {
   font-family: "Noto Sans TC", sans-serif;
   font-weight: normal;
   font-size: 1.7rem;
-  line-height: 2.5rem; }
+  line-height: 2.5rem;
+  margin-bottom: 0; }
 
 .h2-TC {
   font-family: "Noto Sans TC", sans-serif;
   font-weight: normal;
   font-size: 1.6rem;
-  line-height: 2.4rem; }
+  line-height: 2.4rem;
+  margin-bottom: 0; }
 
 .h3-EN {
   font-family: "Roboto", sans-serif;
   font-weight: 900;
   font-size: 1.5rem;
-  line-height: 1.8rem; }
+  line-height: 1.8rem;
+  margin-bottom: 0; }
 
 .h4-TC {
   font-family: "Noto Sans TC", sans-serif;
   font-weight: normal;
   font-size: 1.4rem;
-  line-height: 2.1rem; }
+  line-height: 2.1rem;
+  margin-bottom: 0; }
 
 .h5-TC {
   font-family: "Noto Sans TC", sans-serif;
   font-weight: normal;
   font-size: 1.3rem;
-  line-height: 1.9rem; }
+  line-height: 1.9rem;
+  margin-bottom: 0; }
 
 .h5-EN {
   font-family: "Roboto", sans-serif;
   font-weight: normal;
   font-size: 1.3rem;
-  line-height: 1.5rem; }
+  line-height: 1.5rem;
+  margin-bottom: 0; }
 
 .copyright {
   font-family: "Roboto", sans-serif;
   font-weight: normal;
   font-size: 1.2rem;
-  line-height: 1.4rem; }
+  line-height: 1.4rem;
+  margin-bottom: 0; }
 
 .search-contain {
-  height: 90vh;
+  height: 93vh;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  align-items: center; }
+  align-items: center;
+  background-color: #fed801; }
 
 .logo {
   display: flex;
@@ -94,8 +89,28 @@ body {
     width: 24.4rem;
     height: 4.8rem;
     border-radius: 1rem;
-    background-color: #fed801; }
+    background-color: #fed801;
+    border: #000 solid 0.1rem; }
+    .nav-box__btn:link, .nav-box__btn:visited {
+      transform: translateY(0);
+      transition: all 0.2s; }
+    .nav-box__btn:hover, .nav-box__btn:active {
+      color: #fed801;
+      background-color: #000;
+      transform: translateY(-3px); }
+  .nav-box__item {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center; }
+    .nav-box__item:link, .nav-box__item:visited {
+      color: #000;
+      text-decoration: none; }
+    .nav-box__item:hover, .nav-box__item:active {
+      color: #fed801; }
 
 .footer {
   text-align: right;
-  margin: 2rem 4rem; }
+  padding: 2rem 4rem;
+  background-color: #fed801; }

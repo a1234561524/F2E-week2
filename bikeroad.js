@@ -1,7 +1,15 @@
 "use strict";
 
 const mymap = L.map("mapid").setView([0, 0], 12);
-$("#mapid").hide();
+const selectCity = document.querySelector(".select__city");
+const bikeroadsearch = document.querySelector(".bikeroadsearch");
+const returnBtn = document.querySelector(".select__return");
+const mapid = document.querySelector("#mapid");
+const bikeRoute = document.querySelector(".searchresult");
+
+$(mapid).hide();
+$(returnBtn).hide();
+
 function getmap() {
   L.tileLayer(
     "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",
@@ -65,7 +73,7 @@ cityBox.addEventListener("change", function () {
   getRoutesData(cityBox.value);
 });
 
-const bikeRoute = document.querySelector("#bikeRoute");
+let routeData, serialNumber;
 function getRoutesData(city) {
   axios({
     method: "get",
@@ -73,45 +81,57 @@ function getRoutesData(city) {
     headers: GetAuthorizationHeader(),
   })
     .then((response) => {
-      console.log("自行車的路線", response);
-      const routeData = response.data;
+      console.log("自行車的路線", response.data);
+      routeData = response.data;
 
-      let str = "";
+      let html = "";
+      serialNumber = 0;
       routeData.forEach((item) => {
-        str += `<option value="${item.RouteName}"><h5 class="h5-TC">${item.RouteName}</h5></option>`;
+        html += `        <li class="result" id="${serialNumber++}">
+        <h2 class="result__title h2-TC">${item.RouteName}</h2>
+        <h5 class="result__distance h5-EN">${item.Direction ?? ""} ${
+          item.CyclingLength
+            ? (item.CyclingLength / 1000).toFixed(2) + " 公里"
+            : ""
+        } </h5>
+        <div class="result__location">
+          <img class="result__location-icon" src="img/location.svg" alt="" />
+          <h5 class="h5-TC theme">${item.City ?? ""} ${item.Town ?? ""}</h5>
+        </div>
+      </li>`;
       });
-      bikeRoute.innerHTML = str;
+      bikeRoute.insertAdjacentHTML("afterbegin", html);
 
-      bikeRoute.addEventListener("change", (e) => {
-        const value = e.target.value;
+      const result = document.querySelectorAll(".result");
 
-        if (myLayer) {
-          // console.log(myLayer);
-          mymap.removeLayer(myLayer);
-        }
+      result.forEach(function (res) {
+        res.addEventListener("click", function () {
+          let value = res.getAttribute("id");
+          let geo = routeData[value].Geometry;
+          $(bikeroadsearch).hide();
+          $(returnBtn).show();
+          $(mapid).show();
 
-        routeData.forEach((item) => {
-          if (item.RouteName === value) {
-            let geo = item.Geometry;
-            console.log("geo", geo);
-
-            getmap();
-            // 畫線的方法
-            polyLine(geo);
-          }
+          getmap();
+          // 畫線的方法
+          polyLine(geo);
         });
       });
     })
     .catch((error) => console.log("error", error));
 }
 // 畫出自行車的路線;
+
 let myLayer = null;
 
 function polyLine(geo) {
   // 建立一個 wkt 的實體
   const wicket = new Wkt.Wkt();
   const geojsonFeature = wicket.read(geo).toJson();
-  console.log("geojsonFeature", geojsonFeature);
+  let start = [geojsonFeature.coordinates[0][0]];
+  let end = geojsonFeature.coordinates[0].slice(-1);
+
+  setMarker(start, end);
   // 預設樣式
   // myLayer = L.geoJSON(geojsonFeature).addTo(mymap);
 
@@ -129,3 +149,55 @@ function polyLine(geo) {
   // zoom the map to the layer
   mymap.fitBounds(myLayer.getBounds());
 }
+
+function mapInit() {
+  mymap.eachLayer(function (layer) {
+    if (myLayer > 0) {
+      mymap.removeLayer(layer);
+    }
+    myLayer++;
+  });
+
+  $(mapid).hide();
+  $(bikeroadsearch).show();
+}
+returnBtn.addEventListener("click", function () {
+  mapInit();
+});
+
+selectCity.addEventListener("change", function () {
+  mapInit();
+});
+
+function setMarker(start, end) {
+  let point = [...start, ...end];
+
+  let count = 0;
+  point.forEach((item) => {
+    // console.log(item.StationPosition.PositionLon, item.StationPosition.PositionLat)
+
+    L.marker([item[1], item[0]], { icon: icon })
+      .addTo(mymap)
+      .bindPopup(
+        L.popup({
+          autoClose: false,
+          closeOnClick: false,
+          offset: [3.5, 36],
+          closeButton: false,
+        })
+      )
+      .setPopupContent(
+        `<h4 class="h3-EN  point">${count++ === 0 ? "始" : "終"}</h4>`
+      )
+      .openPopup();
+  });
+}
+
+//標記 icon
+let icon = L.icon({
+  iconUrl: "img/Union2.png",
+
+  iconSize: [36, 50], // size of the icon
+  iconAnchor: [18, 50], // point of the icon which will correspond to marker's location
+  popupAnchor: [-3, -30], // point from which the popup should open relative to the iconAnchor
+});
