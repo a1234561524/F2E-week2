@@ -1,6 +1,6 @@
 # 自行車道地圖資訊整合網
 
-* 這是由六角學院發起的活動 - The F2E 前端 & UI 修煉精神時光屋，本次主題為自行車道地圖資訊整合網，[串接了交通部 TDX API](https://tdx.transportdata.tw/)。
+* 2021 The F2E 3rd 第二週活動參賽作品，自行車道地圖資訊整合網，[串接了交通部 TDX API](https://tdx.transportdata.tw/)。建構出自行車道地圖資訊，地圖的繪製是使用 Leaflet，結合使用者定位快速找到附近的自行車站點、借還資訊以及自行車路線。
 
 * GitHub Page:https://a1234561524.github.io/F2E-week2/
 
